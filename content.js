@@ -234,6 +234,38 @@ window.CONTENT = {
     ["Domains", ["Supply Chain & Logistics", "E-Commerce & CX", "Environmental", "Bioinformatics", "AgTech", "Healthcare Inventory"]],
   ],
 
+  // Volunteering. Bullets are verbatim from 01-candidate-profile.md.
+  volunteerIntro: "Outside of data work, I've given my time across Lloydminster: coaching kids, caring for shelter animals and organizing support for families in need.",
+  volunteer: [
+    {
+      icon: "flag",
+      title: "Volunteer Flag Football Coach",
+      org: "Winston Churchill Elementary School",
+      place: "Lloydminster, SK",
+      dates: "May 2018 - May 2019",
+      stat: { value: "50+", label: "students mentored" },
+      text: "Coached elementary school flag football for two seasons, mentoring over 50 students on teamwork and sportsmanship",
+    },
+    {
+      icon: "paw",
+      title: "Volunteer Animal Caretaker",
+      org: "SPCA",
+      place: "Lloydminster, AB",
+      dates: "Jan 2017 - Jan 2019",
+      stat: { value: "1,400+", label: "animals cared for" },
+      text: "Provided walking, feeding and socialization care for over 1,400 animals to support animal welfare and adoption readiness",
+    },
+    {
+      icon: "heart",
+      title: "Volunteer, Food Drive",
+      org: "Lloydminster Interval Home Society",
+      place: "Lloydminster, SK",
+      dates: "Dec 2018",
+      stat: { value: "Hundreds", label: "of women and children sheltered" },
+      text: "Organized a food drive which supported an institute that provides shelter to hundreds of women and children fleeing family violence",
+    },
+  ],
+
   education: [
     { title: "Master of Data Science and Analytics", org: "University of Calgary", dates: "Sep 2026 - Sep 2027" },
     { title: "Bachelor of Science, Biology", org: "University of Saskatchewan", dates: "Sep 2023 - Apr 2026" },

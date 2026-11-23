@@ -194,6 +194,27 @@
   $("#eduList").innerHTML = C.education.map((e) => cred(e)).join("");
   $("#awardList").innerHTML = C.awards.map((a) => cred(a, medal)).join("");
 
+  /* ---------- Volunteering ---------- */
+  const VOL_ICONS = {
+    flag: '<path d="M6 21V4"/><path d="M6 4h11l-2.5 4.5L17 13H6"/>',
+    paw: '<circle cx="7" cy="9" r="1.8"/><circle cx="11" cy="6" r="1.8"/><circle cx="15.5" cy="7" r="1.8"/><circle cx="18.5" cy="11" r="1.8"/><path d="M8.5 17.5c0-3 2-5.5 4.5-5.5s4.5 2.5 4.5 5c0 2-1.5 3-3 2.6-1-.3-1.6-.4-2.4 0-1.6.6-3.6 0-3.6-2.1z"/>',
+    heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+  };
+  if (C.volunteer) {
+    $("#volIntro").textContent = C.volunteerIntro || "";
+    $("#volGrid").innerHTML = C.volunteer.map((v) => `
+      <article class="vol-card reveal">
+        <div class="vol-top">
+          <span class="vol-icon"><svg viewBox="0 0 24 24" aria-hidden="true">${VOL_ICONS[v.icon] || ""}</svg></span>
+          <span class="vol-dates mono">${esc(v.dates)}</span>
+        </div>
+        <div class="vol-stat"><b>${esc(v.stat.value)}</b><span>${esc(v.stat.label)}</span></div>
+        <h3>${esc(v.title)}</h3>
+        <p class="vol-org">${esc(v.org)} · ${esc(v.place)}</p>
+        <p class="vol-text">${esc(v.text)}</p>
+      </article>`).join("");
+  }
+
   /* ---------- Reveal on scroll ---------- */
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
