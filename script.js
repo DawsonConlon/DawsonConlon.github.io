@@ -169,6 +169,29 @@
     io.observe(n);
   });
 
+  /* ---------- Weighted scrolling ----------
+     Gives mouse-wheel and trackpad scrolling some momentum. Touch scrolling on phones stays native,
+     and it's skipped entirely for visitors who prefer reduced motion.
+     SCROLL_WEIGHT: lower = heavier and smoother (0.1 is the library default; 0.06 feels weighty). */
+  const SCROLL_WEIGHT = 0.06;
+  const WHEEL_SPEED = 0.8; // how far one wheel notch travels (1 = normal)
+  if (window.Lenis && !reduced) {
+    const lenis = new Lenis({ lerp: SCROLL_WEIGHT, wheelMultiplier: WHEEL_SPEED, smoothWheel: true });
+    const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+    // In-page links (nav, "View projects") glide to their section under the fixed nav
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute("href");
+      const target = id === "#top" ? 0 : document.querySelector(id);
+      if (target === null) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: id === "#top" ? 0 : -80, duration: 1.4 });
+      history.replaceState(null, "", id);
+    });
+  }
+
   /* ---------- Nav: scrolled state + active link ---------- */
   const nav = $("#nav");
   const onScroll = () => nav.classList.toggle("scrolled", scrollY > 20);
