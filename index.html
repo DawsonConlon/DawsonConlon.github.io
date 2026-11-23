@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dawson Conlon · Data Portfolio</title>
+  <meta name="description" content="Dawson Conlon: data scientist and analyst building pipelines, databases and AI tools. MDSA student at the University of Calgary, available May 2027." />
+  <meta property="og:title" content="Dawson Conlon · Data Portfolio" />
+  <meta property="og:description" content="Pipelines, databases and AI tools that decision-makers trust." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <a class="logo" href="#top" aria-label="Back to top">DC<span>.</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-inner wrap">
+        <p class="status"><span class="pulse"></span><span id="status"></span></p>
+        <h1 class="hero-name">Dawson<br /><span class="grad">Conlon</span></h1>
+        <p class="hero-role mono"><span class="prompt">&gt;</span> <span id="roleText"></span><span class="caret">_</span></p>
+        <p class="hero-pitch" id="pitch"></p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" id="resumeBtn" href="#" download>Download résumé</a>
+          <a class="icon-btn" id="ghBtn" href="#" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.3 18.3 4.6 18.3 4.6c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+          <a class="icon-btn" id="liBtn" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6v5.4h-4v-4.8c0-1.1 0-2.6-1.6-2.6s-1.8 1.2-1.8 2.5v4.9h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path class="w2" d="M0,70 C220,112 470,18 720,52 C970,86 1190,30 1440,58 L1440,66 C1190,40 970,96 720,62 C470,28 220,120 0,80 Z"/>
+        <path d="M0,80 C220,120 470,28 720,62 C970,96 1190,40 1440,66 L1440,120 L0,120 Z"/>
+      </svg>
+      <a class="scroll-hint" href="#impact" aria-label="Scroll to impact numbers"><span></span></a>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="impact" id="impact" aria-label="Impact in numbers">
+      <div class="wrap">
+        <p class="eyebrow mono">// impact, by the numbers</p>
+        <div class="metrics" id="metrics"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <p class="eyebrow mono">// about</p>
+          <h2>Messy data in.<br /><span class="grad">Decisions out.</span></h2>
+          <div id="aboutText" class="lead"></div>
+        </div>
+        <dl class="facts reveal" id="facts"></dl>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <p class="eyebrow mono">// experience</p>
+        <h2>Where I've <span class="grad">shipped</span></h2>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <p class="eyebrow mono">// projects</p>
+        <h2>Things I've <span class="grad">built</span></h2>
+        <div class="filters" id="filters" role="toolbar" aria-label="Filter projects"></div>
+        <div class="project-grid" id="projectGrid"></div>
+        <p class="empty mono" id="emptyMsg" hidden>No projects in this category yet.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <p class="eyebrow mono">// toolkit</p>
+        <h2>The <span class="grad">stack</span></h2>
+        <div class="skills" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & AWARDS -->
+    <section class="section" id="education">
+      <div class="wrap edu-grid">
+        <div>
+          <p class="eyebrow mono">// education</p>
+          <ul class="cred-list" id="eduList"></ul>
+        </div>
+        <div>
+          <p class="eyebrow mono">// awards</p>
+          <ul class="cred-list award" id="awardList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <p class="eyebrow mono">// contact</p>
+        <h2 class="contact-title">Got messy data?<br /><span class="grad">Let's talk.</span></h2>
+        <a class="mail" id="mailLink" href="#"></a>
+        <div class="cta center">
+          <a class="btn primary" id="liBtn2" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" id="ghBtn2" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" id="resumeBtn2" href="#" download>Résumé (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <span>© <span id="year"></span> Dawson Conlon</span>
+    <span>Built with HTML, CSS &amp; vanilla JS</span>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
