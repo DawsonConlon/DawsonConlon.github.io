@@ -144,6 +144,47 @@
     $("#emptyMsg").hidden = shown > 0;
   });
 
+  /* ---------- Hackathon spotlight ---------- */
+  const HK = C.hackathon;
+  if (HK) {
+    $("#hkMeta").textContent = `${HK.event} · ${HK.date} · ${HK.place}`;
+    $("#hkIntro").textContent = HK.intro;
+    $("#hkProblem").textContent = `\u201C${HK.problem}\u201D`;
+    $("#hkSponsors").textContent = HK.sponsors;
+    $("#hkRepo").href = HK.repo;
+    $("#hkStats").innerHTML = HK.stats.map((s) => `
+      <div class="hk-stat reveal"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join("");
+    const figure = (p, i, cls) => `
+      <figure class="hk-photo ${cls} reveal">
+        <button class="hk-zoom" data-i="${i}" aria-label="Enlarge photo: ${esc(p.caption)}" style="aspect-ratio: ${p.w} / ${p.h}">
+          <img src="${p.src}" width="${p.w}" height="${p.h}" alt="${esc(p.alt)}" loading="lazy" decoding="async" />
+        </button>
+        <figcaption class="mono">${esc(p.caption)}</figcaption>
+      </figure>`;
+    $("#hkGallery").innerHTML = HK.photos.map((p, i) => {
+      if (p.slot === "result") {
+        return `<div class="hk-result">${figure(p, i, "hk-photo-result")}
+          <div class="hk-result-text reveal"><span class="hk-quote-label mono">The result</span><p>${esc(HK.result || "")}</p></div></div>`;
+      }
+      return figure(p, i, i === 0 ? "hk-photo-hero" : "hk-photo-wide");
+    }).join("");
+    $("#hkSteps").innerHTML = HK.steps.map((s, i) => `
+      <li class="reveal"><span class="hk-num mono">${String(i + 1).padStart(2, "0")}</span>
+        <div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div></li>`).join("");
+
+    // Lightbox: click a photo to see it full size
+    const lb = $("#lightbox"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
+    $("#hackathon").addEventListener("click", (e) => {
+      const btn = e.target.closest(".hk-zoom");
+      if (!btn || !lb.showModal) return;
+      const p = HK.photos[+btn.dataset.i];
+      lbImg.src = p.full || p.src; lbImg.alt = p.alt; lbCap.textContent = p.caption;
+      lb.showModal();
+    });
+    $("#lbClose").addEventListener("click", () => lb.close());
+    lb.addEventListener("click", (e) => { if (e.target === lb) lb.close(); });
+  }
+
   /* ---------- Skills / education ---------- */
   $("#skillsGrid").innerHTML = C.skills.map(([g, items]) => `
     <div class="skill-group reveal"><h3>${esc(g)}</h3>
@@ -203,7 +244,7 @@
       if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id));
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
-  ["about", "experience", "projects", "skills", "contact"].forEach((id) => secIO.observe(document.getElementById(id)));
+  ["about", "experience", "projects", "hackathon", "skills", "contact"].forEach((id) => secIO.observe(document.getElementById(id)));
 
   /* ---------- Theme toggle ---------- */
   $("#themeToggle").addEventListener("click", () => {

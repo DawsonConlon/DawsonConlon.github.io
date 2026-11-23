@@ -87,7 +87,7 @@ window.CONTENT = {
   // Featured projects: approved résumé bullets, verbatim.
   projects: [
     {
-      title: "SprayMart",
+      title: "SpraySmart",
       featured: true,
       badge: "2nd Place · USASK AgTech Hackathon",
       dates: "Mar 2026",
@@ -99,7 +99,7 @@ window.CONTENT = {
       blurb: "Tells farmers when weather conditions are right to spray herbicide.",
       bullets: [
         "Placed 2nd at the March 2026 University of Saskatchewan Agriculture Technology Hackathon with a team-built tool that tells farmers when weather conditions are right to spray herbicide",
-        "Interviewed University of Saskatchewan agriculture professors to define spray criteria, then built a 7-day dashboard rating 7 weather measurements as green, yellow or red spray recommendations with plain-language reasons",
+        "Interviewed University of Saskatchewan agriculture professors to pinpoint a pain point farmers face, deciding when to spray herbicide based on intuition, then built a 7-day dashboard rating 7 weather measurements as green, yellow or red spray recommendations with plain-language reasons",
         "Trained a decision tree classifier on 720 hours of Environment Canada weather data and designed a farmer-feedback loop that turns every spray into a labelled training example",
       ],
     },
@@ -185,6 +185,37 @@ window.CONTENT = {
     },
   ],
 
+  // Hackathon spotlight. Event facts are from the organizers' post-event announcement;
+  // project facts reuse the locked SpraySmart bullets.
+  hackathon: {
+    event: "USask Agriculture Technology Hackathon",
+    date: "March 15, 2026",
+    place: "University of Saskatchewan, Saskatoon",
+    intro: "The organizers' largest event yet: 60 students in 16 teams, each taking on a real challenge facing Saskatchewan agriculture, then pitching it to a panel of judges that afternoon. Our team built SpraySmart and placed 2nd.",
+    stats: [
+      { value: "2nd", label: "place overall" },
+      { value: "16", label: "competing teams" },
+      { value: "60", label: "student competitors" },
+      { value: "7-day", label: "spray forecast built" },
+    ],
+    problem: "No dedicated tool gives the farmer a simple go / no-go spray verdict 7 days ahead.",
+    steps: [
+      { title: "Found the problem", text: "We interviewed University of Saskatchewan agriculture professors to find a real pain point farmers face. The answer: farmers decide when to spray herbicide based on intuition, and a wrong call is costly. I saw an opportunity for AI to predict when they should spray." },
+      { title: "Built the tool", text: "A 7-day dashboard rating 7 weather measurements as green, yellow or red spray recommendations with plain-language reasons, plus a decision tree classifier trained on 720 hours of Environment Canada weather data." },
+      { title: "Designed it to learn", text: "A farmer-feedback loop turns every spray into a labelled training example, so the model gets better the more it's used." },
+      { title: "Pitched it", text: "Presented to a panel of farmers and engineers, and took 2nd place out of 16 teams." },
+    ],
+    // Shown in this order, one under the other. The "result" photo gets a short note beside it.
+    photos: [
+      { src: "assets/hackathon/pitching.jpg", w: 1182, h: 665, alt: "Dawson presenting the SpraySmart pitch with a microphone beside a screen titled A Critical Decision Based on Intuition", caption: "Pitching SpraySmart to the judges" },
+      { src: "assets/hackathon/dashboard-full.jpg", w: 1600, h: 1108, alt: "The full SpraySmart dashboard: a 7-day spray forecast for Saskatoon with 4 of 7 days good to spray, all seven weather checks green for Sunday, and an hourly wind chart", caption: "SpraySmart dashboard: good to spray" },
+      { slot: "result", src: "assets/hackathon/team-2nd-place.jpg", w: 528, h: 453, alt: "The SpraySmart team standing beside the results screen after placing", caption: "Results announced: 2nd place" },
+    ],
+    result: "SpraySmart placed 2nd out of 16 teams at the organizers' largest hackathon yet.",
+    sponsors: "Supported by Innovation Saskatchewan, SaskTel, Opus USask, the USask Office of Sustainability and PrairiesCan.",
+    repo: "https://github.com/DawsonConlon/spraymart",
+  },
+
   filters: [
     ["all", "All"],
     ["ml", "AI & ML"],
@@ -209,6 +240,6 @@ window.CONTENT = {
     { title: "Diploma, Bioscience Technology", org: "Saskatchewan Polytechnic", dates: "Sep 2020 - Jun 2022" },
   ],
   awards: [
-    { title: "2nd Place, Agriculture Technology Hackathon", org: "University of Saskatchewan · SprayMart", dates: "Mar 2026" },
+    { title: "2nd Place, Agriculture Technology Hackathon", org: "University of Saskatchewan · SpraySmart", dates: "Mar 2026" },
   ],
 };

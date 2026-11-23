@@ -226,6 +226,66 @@ h2 { font-size: clamp(2.2rem, 5.5vw, 4rem); margin-bottom: 2.5rem; }
 .is-hidden { display: none !important; }
 .empty { color: var(--muted); }
 
+/* ---------- Hackathon spotlight ---------- */
+.hackathon { position: relative; background: var(--bg-2); border-block: 1px solid var(--line); overflow: hidden; }
+.hackathon::before {
+  content: ""; position: absolute; width: 60vmax; height: 60vmax; right: -25vmax; top: -30vmax; border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 14%, transparent), transparent 65%); pointer-events: none;
+}
+.hackathon .wrap { position: relative; }
+.hk-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .5rem 2rem; margin-bottom: 1.2rem; }
+.hk-head h2 { margin-bottom: 0; }
+.hk-meta { color: var(--muted); font-size: .85rem; margin: 0 0 .6rem; }
+.hk-intro { max-width: 46rem; font-size: 1.15rem; color: var(--muted); margin: 0 0 2.4rem; }
+.hk-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-bottom: 2.4rem; }
+.hk-stat { background: var(--card); padding: 22px 24px; display: flex; flex-direction: column; gap: 4px; }
+.hk-stat b { font: 700 clamp(2rem, 4vw, 2.8rem)/1 var(--display); letter-spacing: -.03em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; font-variant-numeric: tabular-nums; }
+.hk-stat span { color: var(--muted); font-size: .92rem; }
+
+.hk-gallery { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 3rem; }
+.hk-photo { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; background: var(--card); min-width: 0; border: 1px solid var(--line); }
+.hk-zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.hk-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2, .8, .2, 1); }
+.hk-photo-hero .hk-zoom { aspect-ratio: 16 / 7.5 !important; }
+.hk-photo-hero img { object-position: 50% 45%; }
+.hk-result { display: grid; grid-template-columns: minmax(0, 528px) 1fr; gap: 2rem; align-items: center; }
+.hk-result-text p { margin: 0; font: 600 clamp(1.35rem, 2.4vw, 1.75rem)/1.3 var(--display); letter-spacing: -.01em; text-wrap: balance; }
+.hk-photo:hover img { transform: scale(1.03); }
+.hk-photo figcaption {
+  position: absolute; left: 12px; bottom: 12px; pointer-events: none;
+  font-size: .76rem; padding: 6px 10px; border-radius: 999px;
+  background: rgba(7, 9, 15, .78); color: #F2F5F8; backdrop-filter: blur(6px);
+}
+/* Every photo gets the same gold tab */
+.hk-photo figcaption { background: var(--accent); color: var(--on-accent); font-weight: 600; backdrop-filter: none; }
+/* Dashboard: top right, sitting just below the "7-Day Spray Forecast" heading so it covers no text */
+.hk-photo-wide figcaption { left: auto; right: 16px; top: 14%; bottom: auto; }
+
+.hk-photo-wide img { object-fit: contain; }
+
+.hk-story { display: grid; grid-template-columns: 1fr 1.25fr; gap: 3rem; align-items: start; margin-bottom: 2.6rem; }
+.hk-story > * { min-width: 0; }
+.hk-quote { margin: 0; position: relative; padding: 30px 30px 30px 34px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); }
+.hk-quote::before { content: ""; position: absolute; left: 0; top: 24px; bottom: 24px; width: 4px; border-radius: 0 4px 4px 0; background: var(--grad); }
+.hk-quote-label { display: block; color: var(--accent-2); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
+.hk-quote p { margin: 0; font: 600 clamp(1.35rem, 2.4vw, 1.75rem)/1.3 var(--display); letter-spacing: -.01em; text-wrap: balance; }
+.hk-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.hk-steps li { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; }
+.hk-num { color: var(--accent); font-weight: 600; font-size: .9rem; padding-top: 3px; }
+.hk-steps h3 { font-size: 1.15rem; margin-bottom: 4px; }
+.hk-steps p { margin: 0; color: var(--muted); font-size: .98rem; }
+.hk-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem 2rem; padding-top: 1.6rem; border-top: 1px dashed var(--line); }
+.hk-sponsors { margin: 0; color: var(--muted); font-size: .9rem; max-width: 38rem; }
+
+.lightbox { border: 0; padding: 0; background: transparent; max-width: min(1200px, 94vw); max-height: 92vh; overflow: visible; }
+.lightbox::backdrop { background: rgba(5, 7, 10, .86); backdrop-filter: blur(4px); }
+.lightbox img { max-width: min(1200px, 94vw); max-height: 82vh; width: auto; height: auto; border-radius: 14px; display: block; margin: 0 auto; }
+.lb-cap { text-align: center; color: #E8ECF2; font: .85rem var(--mono); margin: 12px 0 0; }
+.lb-close {
+  position: absolute; top: -14px; right: -14px; width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--accent); color: var(--on-accent); font-size: 1.6rem; line-height: 1; display: grid; place-items: center;
+}
+
 /* ---------- Skills ---------- */
 .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .skill-group { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
@@ -260,14 +320,19 @@ h2 { font-size: clamp(2.2rem, 5.5vw, 4rem); margin-bottom: 2.5rem; }
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .metrics { grid-template-columns: repeat(2, 1fr); }
+  .hk-stats { grid-template-columns: repeat(2, 1fr); }
+  .hk-story { grid-template-columns: 1fr; gap: 2rem; }
   .skills { grid-template-columns: repeat(2, 1fr); }
   .about-grid, .edu-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 @media (max-width: 720px) {
   .nav { flex-wrap: wrap; row-gap: 0; }
   .nav nav { order: 3; width: 100%; }
-  .nav-links { justify-content: space-between; gap: .5rem; }
-  .nav-links a { font-size: .85rem; }
+  .nav-links { justify-content: space-between; gap: 1rem; overflow-x: auto; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { font-size: .85rem; white-space: nowrap; }
+  .hk-photo-hero .hk-zoom { aspect-ratio: 16 / 9 !important; }
+  .hk-result { grid-template-columns: 1fr; gap: 1.2rem; }
   .hero-inner { padding-top: 130px; }
   .project-grid, .skills { grid-template-columns: 1fr; }
   .project, .job-card { padding: 22px; }

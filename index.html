@@ -26,6 +26,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#hackathon">Hackathon</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -102,6 +103,40 @@
         <p class="empty mono" id="emptyMsg" hidden>No projects in this category yet.</p>
       </div>
     </section>
+
+    <!-- HACKATHON -->
+    <section class="section hackathon" id="hackathon">
+      <div class="wrap">
+        <p class="eyebrow mono">// hackathon</p>
+        <div class="hk-head">
+          <h2>2nd place out of <span class="grad">16 teams</span></h2>
+          <p class="hk-meta mono" id="hkMeta"></p>
+        </div>
+        <p class="hk-intro" id="hkIntro"></p>
+        <div class="hk-stats" id="hkStats"></div>
+        <div class="hk-gallery" id="hkGallery"></div>
+        <div class="hk-story">
+          <blockquote class="hk-quote reveal">
+            <span class="hk-quote-label mono">The problem we pitched</span>
+            <p id="hkProblem"></p>
+          </blockquote>
+          <ol class="hk-steps" id="hkSteps"></ol>
+        </div>
+        <div class="hk-foot">
+          <p class="hk-sponsors" id="hkSponsors"></p>
+          <div class="cta">
+            <a class="btn primary" id="hkRepo" href="#" target="_blank" rel="noopener">See the SpraySmart code</a>
+            <a class="btn" href="#projects">Back to projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+      <button class="lb-close" id="lbClose" aria-label="Close photo">&times;</button>
+      <img id="lbImg" alt="" />
+      <p class="lb-cap" id="lbCap"></p>
+    </dialog>
 
     <!-- SKILLS -->
     <section class="section" id="skills">
