@@ -336,7 +336,6 @@ h2 { font-size: clamp(2.2rem, 5.5vw, 4rem); margin-bottom: 2.5rem; }
 /* ---------- Contact ---------- */
 .contact { padding: clamp(90px, 14vw, 160px) 0; text-align: center; background: radial-gradient(ellipse 60% 70% at 50% 100%, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 70%); }
 .contact .eyebrow { text-align: center; }
-.contact-title { font-size: clamp(2.6rem, 8vw, 6rem); margin-bottom: 2rem; }
 .mail { display: inline-block; font: 600 clamp(1.1rem, 3.4vw, 2rem) var(--display); text-decoration: none; margin-bottom: 2.4rem; border-bottom: 2px solid var(--accent); overflow-wrap: anywhere; }
 .mail:hover { color: var(--accent); }
 .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 26px max(16px, calc((100% - 1160px) / 2), env(safe-area-inset-right, 0px)) 26px max(16px, calc((100% - 1160px) / 2), env(safe-area-inset-left, 0px)); border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
