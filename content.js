@@ -27,7 +27,7 @@ window.CONTENT = {
 
   about: [
     "I'm a first-generation university student who started out in biotechnology. My plan was to work in cancer research and become a professor, until I took my first computer science class and fell in love with the field.",
-    "I realized that data science builds on what I was already learning: hypothesis testing and the empirical method carry straight over from the lab to data. That pushed me toward a career in data and AI, and it's what brought me to the Master of Data Science and Analytics program at the University of Calgary. Along the way, I've built a year and a half of internship experience working in data and AI.",
+    "I realized that data science builds on what I was already learning: hypothesis testing and the empirical method carry straight over from the lab to data. That pushed me toward a career in data and AI, and it's what brought me to the Master of Data Science and Analytics program at the University of Calgary.",
   ],
   facts: [
     ["Based in", "Calgary, AB · Saskatoon roots"],
