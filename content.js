@@ -26,8 +26,8 @@ window.CONTENT = {
   ],
 
   about: [
-    "I'm a Master of Data Science and Analytics student at the University of Calgary with a background in biotechnology and over a year and a half of internship experience in data quality, analysis and reporting.",
-    "As a first-generation university student, I've learned to figure things out by building. My favourite work starts with a messy problem: an underused database, a shipping decision nobody could prove, a treatment plant that wasn't nitrifying. I dig into the data, build the tool, and present the answer to the people who need it, from a CEO to a panel of farmers and engineers.",
+    "I'm a first-generation university student who started out in biotechnology. My plan was to work in cancer research and become a professor, until I took my first computer science class and fell in love with the field.",
+    "I realized that data science builds on what I was already learning: hypothesis testing and the empirical method carry straight over from the lab to data. That pushed me toward a career in data and AI, and it's what brought me to the Master of Data Science and Analytics program at the University of Calgary.",
   ],
   facts: [
     ["Based in", "Calgary, AB · Saskatoon roots"],
